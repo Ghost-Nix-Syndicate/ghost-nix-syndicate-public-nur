@@ -3,20 +3,19 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    ghost-nur.url = "github:Ghost-Nix-Syndicate/ghost-nix-syndicate-public-nur";
+    ghost-nur.url = "path:..";
   };
 
   outputs = { self, nixpkgs, ghost-nur }: let
-    pkgs = import nixpkgs { system = "x86_64-linux"; };
+    pkgs = import nixpkgs { 
+      system = "x86_64-linux"; 
+      overlays = [ ghost-nur.overlays.securityTools ];
+    };
   in {
     devShells.x86_64-linux.default = pkgs.mkShell {
-      buildInputs = [
-        ghost-nur.packages.x86_64-linux.hacktoolsBundle
-        # or pick individual packages:
-        # ghost-nur.packages.x86_64-linux.nmap
-        # ghost-nur.packages.x86_64-linux.hashcat
-      ];
-
+      buildInputs = 
+        pkgs.hacktoolsBundle
+      ;
       # optional: set environment variables
       shellHook = ''
         echo "Hacktools dev shell ready!"
