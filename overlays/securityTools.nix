@@ -10,6 +10,16 @@ self: super: {
     metasploit  = super.metasploit;
     sqlmap      = super.sqlmap;
     nikto       = super.nikto;
+    bloodhound-pyVersion = super.bloodhound-pyVersion;
+    bloodhound = super.bloodhound;
+    ad-miner = super.ad-miner;
+    azurehound = super.azurehound;
+    neo4j = super.neo4j;
+    sleuthkit = super.sleuthkit;
+    autopsy = super.autopsy;
+
+
+
   };
 
   # Bundle list if you want a single install group
