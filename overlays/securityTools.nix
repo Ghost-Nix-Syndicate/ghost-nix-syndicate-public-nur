@@ -17,13 +17,14 @@ self: super: {
     neo4j = super.neo4j;
     sleuthkit = super.sleuthkit;
     autopsy = super.autopsy;
-
+    bettercap = super.bettercap;
+    ghidra = super.ghidra;
 
 
   };
 
   # Bundle list if you want a single install group
   hacktoolsBundle = with self.hacktools; [
-    nmap wireshark tcpdump hashcat john metasploit sqlmap nikto bloodhound ad-miner azurehound neo4j sleuthkit autopsy
+    nmap wireshark tcpdump hashcat john metasploit sqlmap nikto bloodhound ad-miner azurehound neo4j sleuthkit autopsy bettercap ghidra
   ];
 }
