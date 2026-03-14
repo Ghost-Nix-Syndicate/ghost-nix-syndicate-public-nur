@@ -24,6 +24,6 @@ self: super: {
 
   # Bundle list if you want a single install group
   hacktoolsBundle = with self.hacktools; [
-    nmap wireshark tcpdump hashcat john metasploit sqlmap nikto
+    nmap wireshark tcpdump hashcat john metasploit sqlmap nikto bloodhound-pyVersion bloodhound ad-miner azurehound neo4j sleuthkit autopsy
   ];
 }
