@@ -10,7 +10,7 @@ self: super: {
     metasploit  = super.metasploit;
     sqlmap      = super.sqlmap;
     nikto       = super.nikto;
-    bloodhound-pyVersion = super.bloodhound-pyVersion;
+    # bloodhound-pyVersion = super.bloodhound-pyVersion;
     bloodhound = super.bloodhound;
     ad-miner = super.ad-miner;
     azurehound = super.azurehound;
@@ -24,6 +24,6 @@ self: super: {
 
   # Bundle list if you want a single install group
   hacktoolsBundle = with self.hacktools; [
-    nmap wireshark tcpdump hashcat john metasploit sqlmap nikto bloodhound-pyVersion bloodhound ad-miner azurehound neo4j sleuthkit autopsy
+    nmap wireshark tcpdump hashcat john metasploit sqlmap nikto bloodhound ad-miner azurehound neo4j sleuthkit autopsy
   ];
 }
