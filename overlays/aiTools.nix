@@ -9,7 +9,9 @@ self: super: {
     qdrant     = super.qdrant;
     nvm     = super.nvm;
     pnpm     = super.pnpm;
+    nano     = super.nano;
     treesitter     = super.treesitter;
+    neovim     = super.neovim;
     pkgs.vimPlugins.nvim-treesitter-parsers.nix = super.pkgs.vimPlugins.nvim-treesitter-parsers.nix;
     code-server     = super.code-server;
 
@@ -18,6 +20,6 @@ self: super: {
 
   # Bundle list if you want a single install group
   aitoolsBundle = with self.aitools; [
-    openclaw ollama-cpu vllm code-server nvm pnpm qdrant neo4j treesitter pkgs.vimPlugins.nvim-treesitter-parsers.nix
+    openclaw ollama-cpu vllm code-server neovim nvm pnpm qdrant neo4j treesitter pkgs.vimPlugins.nvim-treesitter-parsers.nix
   ];
 }
