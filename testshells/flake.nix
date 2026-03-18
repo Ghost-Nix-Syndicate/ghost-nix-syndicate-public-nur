@@ -9,16 +9,18 @@
   outputs = { self, nixpkgs, ghost-nur }: let
     pkgs = import nixpkgs { 
       system = "x86_64-linux"; 
-      overlays = [ ghost-nur.overlays.securityTools ];
+      overlays = [ ghost-nur.overlays.securityTools ghost-nur.overlays.aiTools ];
     };
   in {
     devShells.x86_64-linux.default = pkgs.mkShell {
       buildInputs = 
         pkgs.hacktoolsBundle
+        pkgs.aitoolsBundle
       ;
       # optional: set environment variables
       shellHook = ''
-        echo "Hacktools dev shell ready!"
+        echo "Hack tools dev shell ready!"
+        echo "ai tools dev shell ready!"
       '';
     };
   };
